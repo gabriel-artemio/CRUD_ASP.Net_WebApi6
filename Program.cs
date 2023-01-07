@@ -1,8 +1,13 @@
+using ASP.NET_webAPi.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddEntityFrameworkSqlServer()
+    .AddDbContext<TarefasDbContext>();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
