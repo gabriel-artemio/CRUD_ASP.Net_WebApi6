@@ -2,6 +2,7 @@
 using ASP.NET_webAPi.Repositorios.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Design.Internal;
 
 namespace ASP.NET_webAPi.Controllers
 {
@@ -9,6 +10,7 @@ namespace ASP.NET_webAPi.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+        //CRUD Entity Framework
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
         {
