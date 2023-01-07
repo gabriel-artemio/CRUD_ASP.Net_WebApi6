@@ -1,4 +1,5 @@
-﻿using ASP.NET_webAPi.Models;
+﻿using ASP.NET_webAPi.Data.Map;
+using ASP.NET_webAPi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASP.NET_webAPi.Data
@@ -14,6 +15,8 @@ namespace ASP.NET_webAPi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new TarefaMap());
             base.OnModelCreating(modelBuilder);
         }
     }
